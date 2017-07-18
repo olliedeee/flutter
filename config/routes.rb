@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  
+  
+  # for Twitter UI components inc. navbar
+  
+  
    # Define index for Pages 
    root 'pages#index'
   # Define Routes for Pages - the get means these can be accessed as WEB PAGES
-  get '/home' => 'pages#home'
+  get '/home' => 'pages#home' #thos overrides the default root setup which is to make pages follow url.com/pages/page1.html
   get '/profile'=> 'pages#profile'
   get '/explore'=> 'pages#explore'
 
