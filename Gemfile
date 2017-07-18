@@ -2,8 +2,11 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# We will use the devise gem to authenticate, it has password hashing and emailing for pw reset, and on email on registration.
+gem 'devise'
 
 
+# For twitter UI components, including nav bar
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'rails', '4.2.5'
