@@ -12,43 +12,42 @@
     <div class="col-xs-3">
         <div class = "panel panel-default">
           <div class="panel-body">
-            <h1>Profile</h1>
-            <p>1</p> 
+            <p>Profile</p> 
           </div>
         </div>
+        <div class = "panel panel-default">
+                <div class="panel-body">
+                <p>Trends</p> 
+                </div>
+            </div>
     </div>
 
 
     <div class="col-xs-6">
-    <div class = "panel panel-default">
-      <div class="panel-body">
-        <h1>Tweets</h1>
-        <p>2</p> 
-      </div>
-    </div>
+         <% for @p in @posts %>
+        <div class = "panel panel-default">
+          <div class="panel-body">
+            <p><%= @p.content %></p> 
+          </div>
+        </div>
+            <% end %>
+
     </div>
 
 
     <div class="col-xs-3">
-    <div class = "panel panel-default">
-        <div class="panel-body">
-            <h1>Who to follow</h1>
-            <p>3</p> 
-
+        <div class = "panel panel-default">
+            <div class="panel-body">
+                <p>Who to follow</p> 
+            </div>
         </div>
-    </div>
-    </div>
-</div> 
+            <div class = "panel panel-default">
+                <div class="panel-body">
+                <p>Trends</p> 
+                </div>
+            </div>
+        </div>
+
+    </div> 
 
 <!-- begin row two -->
-<div class="row">
-    <div class="col-xs-3 col-xs-offset-9">
-    <div class = "panel panel-default">
-        <div class="panel-body">
-            <h1>Trends</h1>
-            <p>4</p> 
-
-        </div>
-    </div>
-    </div>
-</div> 
