@@ -1,2 +1,78 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<% if !user_signed_in? #if the user is not signed in, render this %> 
+ <style>
+     body {background: linear-gradient( /* added a transparent gradient over the image to give contrast to the white text */
+     rgba(0,0,0, 0.3),
+     rgba(0,0,0, 0.3)   
+     ), url("/bg.jpg") no-repeat center center fixed;
+     
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+          }
+    h1 {color:white;
+    }
+    p {color:white;
+    }
+    .container-index {
+        margin-right: 15%;
+        margin-left: 15%;
+        font-weight: 600;
+        font-size: 150%;
+    }
+    
+   
+    .footer-links {
+        margin-top:20%;
+        text-align: center;
+        color: white;
+         font-weight: 300;
+        font-size: 70%;
+        }
+    .log-in {
+        margin-top: 5%;
+        width:300px;
+        height:150px;
+        float:right;
+    }
+    .sign-up {
+        margin-top: 0%;
+        width:300px;
+        height:200px;
+        float:right;
+    }
+    
+    
+ </style>
+ 
+<div class="container-index row">
+    
+        <div class="col-xs-7 " >
+            <h1> Welcome to Flutter</h1>
+            <p> Welcome to Flutter, a very basic version of twitter. This was created to practice building a web service and use bootstrap CSS. Fusce sit amet finibus lorem. 
+               </br >
+                              </br >
+
+               </br >
+
+            </p>
+            </div>
+    <div class="col-xs-5">
+    <div class="log-in panel">login </div>
+    <div class="sign-up panel">sign up</div>    
+        
+        
+    </div> <!-- blue thing -->
+
+            
+            
+</div> <!-- main content div -->
+<div class="col-xs-12 footer-links"> <p> About  Help  Centre  Blog  Status  Jobs  Terms  Privacy  Policy  Cookies  Advertise  Settings  ©  2017  Flutter </p></div>
+
+
+
+<% else #If the user IS signed in, render the following%> 
+
+Signed in
+
+<% end %>
