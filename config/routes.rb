@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
- 
+ resources :posts
   devise_for :users
   # for Twitter UI components inc. navbar
   root 'pages#index'
