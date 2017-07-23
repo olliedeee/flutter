@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.3.0" # specify ruby install so heroku can match files to host
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # We will use the devise gem to authenticate, it has password hashing and emailing for pw reset, and on email on registration.
@@ -10,8 +10,10 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'rails', '4.2.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# use pg for Heroku database.
+gem 'pg'
+# Heroku pre-reqs
+gem 'rails_12factor', group: :production #don't use locally, only on heroku
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
