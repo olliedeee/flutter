@@ -1,53 +1,101 @@
-<div class="row">
-    <div class="col-xs-12">
-        <div class="jumbotron">
-        JUMBROTRON HEADER
-        </div>
-    </div>
-</div>
-
+  <div class="container"> 
+  </div>
+   
     <!-- begin row one -->
-
 <div class="row">
     <div class="col-xs-3">
-        <div class = "panel panel-default">
-          <div class="panel-body">
-            <p>Profile</p> 
-          </div>
-        </div>
-        <div class = "panel panel-default">
-                <div class="panel-body">
-                <p>Trends</p> 
+        <div class="panel panel-default">
+            <div class="panel-image hide-panel-body">  
+            <img src="/DO-Logo.png" class="panel-image-preview">
+            </div>
+            <div class="panel-footer">
+            <div class="row">
+                <div class="col-sm-2"><img src="/181.png" height="50px" width="50px" class="rounded-img home-avatar"></div>
+                <div class="col-sm-10"><h4 style="text-align: center;"><%= current_user.username %></h4></div>
+                <div class="col-sm-12" style="margin-top: 10px;">
+                  <div class="col-sm-6" style="font-size: 80%; opacity: 0.7;">POSTS<br>
+                    <h6 style="color: #0084B4; font-size: 200%;"> <%= current_user.posts.count %> </h6>
+                  </div>
+                  <div class="col-sm-6" style="font-size: 80%; opacity: 0.7;">FOLLOWERS<br>
+                    <h6 style="color: #0084B4; font-size: 200%;">15<!-- current_user.followers.count %--></h6>
+                  </div>
                 </div>
             </div>
-    </div>
+            </div>
+</div>
+        
+          <div class="panel panel-default">
+          <div class="panel-body">
+             <h5 style="color: grey; font-size: 125%;">Trends</h5>
+              <a href="">#Trend #1</a><br>
+                <span style="color: grey;">31k Posts</span><br><br>
+              <a href="">#Trend #2</a><br>
+                <span style="color: grey;">25k Posts</span><br><br>
+              <a href="">#Trend #3</a><br>
+                <span style="color: grey;">16k Posts</span><br><br>
+          </div>
+        </div>
+        
+    </div> <!-- ending div for left column-->
+        
 
 
     <div class="col-xs-6">
+        <%= render '/components/post_form' %>
          <% for @p in @posts %>
-        <div class = "panel panel-default">
-          <div class="panel-body">
-            <p><%= @p.content %></p> 
-          </div>
-        </div>
-            <% end %>
+        <div class = "panel panel-default post-panel">
+          <div class="panel-body row">
+             <div class="col-sm-1">
+                 <img src="/181.png" class="rimg" height="50px" width="50px"> </img>
+             </div> <!-- closing div for tweeter pic -->
+             <div class="col-sm-11 ">
+                 <p class="post-title"><span class="post-owner"><%= User.find(@p.user_id).username %></span> - <span class="date-posted"> <%= @p.created_at.to_formatted_s(:short) %></span></p>
+            <p class="post-content"><%= @p.content %></p> 
+             </div> <!-- closing div for tweet content -->
+             
+             <div class="col-sm-12 post-links">
+                <span class="glyphicon g1 glyphicon-sort" aria-hidden="true"></span>
+                <span class="glyphicon g1 glyphicon-comment" aria-hidden="true"></span>
+                <span class="glyphicon g1 glyphicon-heart-empty" aria-hidden="true"></span>
+                <span class="glyphicon g1 glyphicon-stats" aria-hidden="true"></span>
 
-    </div>
+
+
+             </div> <!-- closing div for tweet columns -->
+            
+          </div><!-- closing div for tweet container -->
+          
+        </div><!-- closing div for tweet container -->
+            <% end %>
+ <div class="panel panel-default post-panel"> 
+ <div class="panel-body row">
+     <div class="col-xs-6 col-xs-offset-3"> 
+     <center><a href="#top"><p class="opacity: .7; color:grey;"> Back to Top <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></p></a></center>
+     </div> 
+ </div>
+
+</div>
+                  </div>
+      
+
+
+
+
+
+
 
 
     <div class="col-xs-3">
         <div class = "panel panel-default">
-            <div class="panel-body">
-                <p>Who to follow</p> 
+            <div class="panel-body about-panel">
+                <p> About  Help  Centre  Blog  Status  Jobs  Terms  Privacy  Policy  Cookies  Advertise  Settings  ©  2017  Flutter 
             </div>
         </div>
-            <div class = "panel panel-default">
-                <div class="panel-body">
-                <p>Trends</p> 
-                </div>
-            </div>
+            
         </div>
 
-    </div> 
+    </div> <!-- ending div for row-->
+
 
 <!-- begin row two -->
+

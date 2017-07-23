@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   
- resources :posts
   devise_for :users
-  # for Twitter UI components inc. navbar
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
+  resources :posts
+  # Define Root URL
   root 'pages#index'
    
   # Define Routes for Pages - the get means these can be accessed as WEB PAGES

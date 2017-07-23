@@ -8,6 +8,8 @@ class PagesController < ApplicationController
 # back end code for pages/index
   def home
       @posts = Post.all;
+      @newPost = Post.new
+
 
   end
 
@@ -24,11 +26,17 @@ def profile
   
   @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id);
   @newPost = Post.new
-  
+  @toFollow = User.all.last(5)
 end
+
+
 # back end code for pages/index
   def explore
       @posts = Post.all;
+      @toFollow = User.all.last(5)
+        @newPost = Post.new
+
+
 
   end
 end

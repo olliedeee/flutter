@@ -1,49 +1,88 @@
-<div class="row">
-    <div class="col-xs-12">
-        <div class="jumbotron">
-            Welcome <%= @username %>
-        </div>
-    </div>
-</div>
+
 
     <!-- begin row one -->
-
 <div class="row">
-    <div class="col-xs-3">
-        <div class = "panel panel-default">
-          <div class="panel-body">
-            <h1>Profile</h1>
-            <p>1</p> 
-          </div>
-        </div>
-    </div>
+       <div class="col-xs-3">
+      <div class="col-sm-12" style="margin-top: -200px;">
+            <img src="/DO-Logo.png" height="200px" width="200px" class="rimg1">
+      </div>
+      <div class="col-sm-12">
+        <h3 style="font-weight: bold;"><%= params[:id] %></h3>
+        <p style="height:500px;">
+          This is the official Day One Flutter channel. <a href="http://www.youtube.com/DayOne">http://www.youtube.com/DayOne</a>
+        </p>
+      </div>
 
-   
+          
+        
+    </div> <!-- ending div for left column-->
+        
+
+
     <div class="col-xs-6">
         <%= render '/components/post_form' %>
          <% for @p in @posts %>
-        <div class = "panel panel-default">
-          <div class="panel-body">
-            <p><%= @p.content %></p> 
-          </div>
-        </div>
+        <div class = "panel panel-default post-panel">
+          <div class="panel-body row">
+             <div class="col-sm-1">
+                 <img src="/181.png" class="rimg" height="50px" width="50px"> </img>
+             </div> <!-- closing div for tweeter pic -->
+             <div class="col-sm-11 ">
+                 <p class="post-title"><span class="post-owner"><%= User.find(@p.user_id).username %></span> - <span class="date-posted"> <%= @p.created_at.to_formatted_s(:short) %></span></p>
+            <p class="post-content"><%= @p.content %></p> 
+             </div> <!-- closing div for tweet content -->
+             
+             <div class="col-sm-12 post-links">
+                <span class="glyphicon g1 glyphicon-sort" aria-hidden="true"></span>
+                <span class="glyphicon g1 glyphicon-comment" aria-hidden="true"></span>
+                <span class="glyphicon g1 glyphicon-heart-empty" aria-hidden="true"></span>
+                <span class="glyphicon g1 glyphicon-stats" aria-hidden="true"></span>
+
+
+
+             </div> <!-- closing div for tweet columns -->
+            
+          </div><!-- closing div for tweet container -->
+          
+        </div><!-- closing div for tweet container -->
             <% end %>
+ <div class="panel panel-default post-panel"> 
+ <div class="panel-body row">
+     <div class="col-xs-6 col-xs-offset-3"> 
+     <center><a href="#top"><p class="opacity: .7; color:grey;"> Back to Top <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></p></a></center>
+     </div> 
+ </div>
 
-    </div>
+</div>
+                  </div>
+      
 
-    <div class="col-xs-3">
+
+
+
+
+
+
+<div class="col-xs-3">
+        <div class ="panel panel-default"> 
+        <center>
+        <p class="btn btn-primary navbar-btn" type="button"> Follow </p>
+        </center>
+        </div>
         <div class = "panel panel-default">
-            <div class="panel-body">
-                <p>Who to follow</p> 
+            <div class="panel-body about-panel">
+                <h4> Who to follow</h3>
+                <% for @u in @toFollow do %>
+                <p style="font-weight: bold; opacity: 0.85;" ><a href="/user/<%= @u.username %>"><%= @u.username %></a></p> 
+                <% end %>
             </div>
         </div>
-            <div class = "panel panel-default">
-                <div class="panel-body">
-                <p>Trends</p> 
-                </div>
-            </div>
+            
         </div>
 
-    </div> 
+  
+    </div> <!-- ending div for row-->
+
 
 <!-- begin row two -->
+

@@ -47,9 +47,9 @@
  
 <div class="container-index row">
     
-        <div class="col-xs-7 " >
+        <div class="col-xs-8 " >
             <h1> Welcome to Flutter</h1>
-            <p> Welcome to Flutter, a very basic version of twitter. This was created to practice building a web service and use bootstrap CSS. Fusce sit amet finibus lorem. 
+            <p> Welcome to Flutter, a very basic version of twitter. This was created to practice building a web service, using Rails, CSS, an IDE and Heroku. 
                </br >
                               </br >
 
@@ -57,10 +57,11 @@
 
             </p>
             </div>
-    <div class="col-xs-5">
-    <div class="log-in panel">login </div>
-    <div class="sign-up panel">sign up</div>    
-        
+    <div class="col-xs-3 index-login">
+        <center>
+    <div class="panel"> <%= link_to('Sign Up', new_user_registration_path) %> </div>
+    <div class="panel"><%= link_to('Sign In', new_user_session_path) %></div>    
+        </center>
         
     </div> <!-- blue thing -->
 
@@ -73,6 +74,5 @@
 
 <% else #If the user IS signed in, render the following%> 
 
-Signed in
-
+<script>document.location = "/home" </script>
 <% end %>
